@@ -1,0 +1,28 @@
+= Shared Tasks
+
+Helps you automate some of the common tasks associated with writing a gem or Ruby library.
+
+[<b>Wiki</b>:]             http://wiki.qualitysmith.com/Shared_rake_tasks
+[<b>Compare with</b>:]     http://rdoc.qualitysmith.com/shared_rails_tasks/
+[<b>Gem install</b>:]      <tt>gem install qualiy_rake_tasks</tt>
+[<b>Public project site</b>:] none
+
+== Installation
+
+Throw this at the top of your project's Rakefile:
+
+  require 'rubygems'
+  gem 'quality_rake_tasks'
+  require 'quality_rake_tasks'
+
+== rdoc_task 
+
+* SharedTasks.rdoc_task
+
+== normal_test_task
+
+* SharedTasks.normal_test_task
+
+== To do
+
+Merge with "GemSmith"?
