@@ -130,6 +130,12 @@ module SharedTasks
     end
   end
 
+  desc 'Use ruby1.9/gem1.9'
+  task :'1.9' do
+    ENV['ruby_command'] = 'ruby1.9'
+    ENV['gem_command']  = 'gem1.9'
+  end
+
   desc "Test installing the gem locally"
   # Use rake clean to force rebuilding of gem. Otherwise it may see that it has already built a gem file with that name and just try to reinstall the one we've already got.
   task :gem_install => [:clean, :gem] do
@@ -141,7 +147,7 @@ module SharedTasks
     # But once a version is released, it should never be changed. So I guess rather than checking if this version is installed locally,
     # we should check some flag that we keep in ProjectVersion containing the last version number that has been published and refuse to
     # rebuild a gem version that has already been released...
-    sh %{sudo gem install --local --force --no-rdoc --no-ri pkg/#{Project::Name}-#{Project::Version}.gem }
+    sh %{sudo #{ENV['gem_command']||'gem'} install --local --force --no-rdoc --no-ri pkg/#{Project::Name}-#{Project::Version}.gem }
   end
 
   desc "Remove generated directories."
