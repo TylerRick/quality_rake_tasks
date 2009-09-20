@@ -30,7 +30,7 @@ specification = Gem::Specification.new do |s|
 
   # Files
   #s.autorequire = "#{Project::Name}"  # autorequire is deprecated (unfortunately). Don't use it.
-  s.files = FileList['{lib,test,examples}/**/*.rb', 'bin/*', 'Readme'].exclude('ToDo').to_a
+  s.files = FileList['{lib,test,examples,vendor}/**/*.rb', 'bin/*', 'Readme'].exclude('ToDo').to_a
   s.test_files = Dir.glob('test/*.rb')
   s.require_path = "lib"
   #s.executables = "some_command"

@@ -159,7 +159,7 @@ module SharedTasks
   #---------------------------------------------------------------------------------------------------------------------------------
   # Publishing
 
-  require 'rake/contrib/sshpublisher'
+  require File.dirname(__FILE__) + '/../vendor/rake/lib/rake/contrib/sshpublisher'
 
   def self.publish_task()
     module_eval do
@@ -195,7 +195,7 @@ module SharedTasks
           release.package_name = "#{Project::Name}"
           release.release_name = "#{Project::Name} #{Project::Version}"
           release.release_changes = ''
-          release.release_notes = File.read(release_notes)       # Probably want to put them somewhere else, but for now...
+          #release.release_notes = File.read(release_notes)       # Probably want to put them somewhere else, but for now...
         end
       end
     end
